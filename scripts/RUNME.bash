@@ -12,8 +12,8 @@ fi
 
 PATH=$PATH:$PWD:$PWD/../bin
 
-rm -rf ../tmp ../result
-mkdir -p ../tmp ../result
+rm -rf ../tmp ../results
+mkdir -p ../tmp ../results
 cd ../tmp
 
 grep "^>" $contigs \
@@ -57,5 +57,5 @@ top_orf_hits_species.py \
 classify_other.py \
   > classify_other.tsv
 
-result.py \
-  > ../result/result.csv
+results.py \
+  > ../results/results.csv
