@@ -1,4 +1,4 @@
-![Muscle5](http://drive5.com/images/viratax_logo.jpg)
+![Muscle5](http://drive5.com/images/viratax_logo2.jpg)
 
 ## Viral metagenomics taxonomy classification
 
