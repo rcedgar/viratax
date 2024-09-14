@@ -1,13 +1,30 @@
 #!/bin/bash -e
 
-contigs=../contigs/ictv_challenge_contigs.fa
-
 if [ ! -s ./RUNME.bash ] ; then
 	x=`echo $PWD | sed "-es/.*viratax/scripts/@/"`
 	if [ x != @ ] ; then
 		echo "Must start ./RUNME.bash from viratax/scripts/ directory"
 		exit 1
 	fi
+fi
+
+if [ ! -d ../refdata ] ; then
+	mkdir -p ../refdata
+	cd ../refdata
+	wget https://serratus-public.s3.amazonaws.com/rce/viratax/viratax_refdata-2024-09-14.tar.gz
+	tar -zxvf viratax_refdata-2024-09-14.tar.gz
+	rm -f viratax_refdata-2024-09-14.tar.gz
+	cd ../scripts
+fi
+
+contigs=../contigs/ictv_challenge_contigs.fa
+
+if [ ! -s $contigs ] ; then
+	mkdir -p ../contigs
+	cd ../contigs
+	wget https://serratus-public.s3.amazonaws.com/rce/ictv_challenge/ictv_challenge_contigs.fa.gz
+	gunzip -v ictv_challenge_contigs.fa.gz
+	cd ../scripts
 fi
 
 PATH=$PATH:$PWD:$PWD/../bin
