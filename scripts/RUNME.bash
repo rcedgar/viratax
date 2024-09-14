@@ -80,3 +80,8 @@ classify_other.py \
 
 results.py \
   > ../results/results.csv
+
+if [ -d /docker_results ] ; then
+	cp -v ../results/results.csv /docker_results/
+	echo "Docker: results.csv copied to current directory"
+fi
