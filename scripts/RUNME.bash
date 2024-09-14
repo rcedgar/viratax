@@ -11,7 +11,8 @@ fi
 if [ ! -d ../refdata ] ; then
 	mkdir -p ../refdata
 	cd ../refdata
-	wget https://serratus-public.s3.amazonaws.com/rce/viratax/viratax_refdata-2024-09-14.tar.gz
+	echo "Downloading reference data, this may take a few minutes"
+	wget -q https://serratus-public.s3.amazonaws.com/rce/viratax/viratax_refdata-2024-09-14.tar.gz
 	tar -zxvf viratax_refdata-2024-09-14.tar.gz
 	rm -f viratax_refdata-2024-09-14.tar.gz
 	cd ../scripts
@@ -22,7 +23,8 @@ contigs=../contigs/ictv_challenge_contigs.fa
 if [ ! -s $contigs ] ; then
 	mkdir -p ../contigs
 	cd ../contigs
-	wget https://serratus-public.s3.amazonaws.com/rce/ictv_challenge/ictv_challenge_contigs.fa.gz
+	echo "Downloading ICTV Challenge contigs, this may take a few minutes"
+	wget -q https://serratus-public.s3.amazonaws.com/rce/ictv_challenge/ictv_challenge_contigs.fa.gz
 	gunzip -v ictv_challenge_contigs.fa.gz
 	cd ../scripts
 fi
