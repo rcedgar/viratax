@@ -11,7 +11,7 @@ fi
 if [ ! -d ../refdata ] ; then
 	mkdir -p ../refdata
 	cd ../refdata
-	echo "Downloading reference data, this may take a few minutes"
+	echo "Downloading reference data"
 	wget -q https://serratus-public.s3.amazonaws.com/rce/viratax/viratax_refdata-2024-09-14.tar.gz
 	tar -zxvf viratax_refdata-2024-09-14.tar.gz
 	rm -f viratax_refdata-2024-09-14.tar.gz
@@ -23,7 +23,7 @@ contigs=../contigs/ictv_challenge_contigs.fa
 if [ ! -s $contigs ] ; then
 	mkdir -p ../contigs
 	cd ../contigs
-	echo "Downloading ICTV Challenge contigs, this may take a few minutes"
+	echo "Downloading ICTV Challenge contigs"
 	wget -q https://serratus-public.s3.amazonaws.com/rce/ictv_challenge/ictv_challenge_contigs.fa.gz
 	gunzip -v ictv_challenge_contigs.fa.gz
 	cd ../scripts
@@ -60,7 +60,9 @@ top_nt_hit.py \
 not_species_orfs.py \
 	> not_species_orfs.fa
 
+echo "Running diamond search"
 diamond blastp \
+  --quiet \
   --query not_species_orfs.fa \
   --db ../refdata/gb \
   --sensitive \

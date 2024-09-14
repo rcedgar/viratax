@@ -47,7 +47,7 @@ current_contig = None
 hits = []
 n = 0
 for line in open("diamond_hits.tsv"):
-	if n%10000 == 0:
+	if n%100000 == 0:
 		sys.stderr.write("%d finding top orf hits\r" % n)
 	n += 1
 	flds = line[:-1].split('\t')
