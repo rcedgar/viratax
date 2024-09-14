@@ -2,3 +2,4 @@ refdata/
 contigs/
 tarballs/
 tmp/
+docker/results.csv
