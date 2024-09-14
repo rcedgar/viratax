@@ -1,6 +1,6 @@
 ![Muscle5](http://drive5.com/images/viratax_logo.jpg)
 
-## Viratax pipline for viral metagenomics taxonomy classification
+## Viral metagenomics taxonomy classification
 
 Viratax was developed for the ICTV Challenge (https://ictv-vbeg.github.io/ICTV-TaxonomyChallenge/).
 
