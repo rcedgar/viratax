@@ -11,25 +11,12 @@ See `results/results.csv`.
 ## Running the pipeline
 To re-generate `results/results.csv`, choose one of the following methods.
 
-### Using Linux after the repository is made public
+### Using Linux command line
 
 Clone the repository and execute `./RUNME.bash` from the `scripts/` directory.
 
 <pre>
 git clone https://github.com/rcedgar/viratax.git
-cd scripts
-./RUNME.bash
-</pre>
-
-### Using Linux while the repository is private.
-
-Download the repository from Serratus at https://serratus-public.s3.amazonaws.com/rce/viratax/viratax-repo-2024-09-14.tar.gz, extract the tarball and execute `./RUNME.bash` from the `scripts/` directory.
-
-<pre>
-mkdir viratax
-cd viratax
-wget https://serratus-public.s3.amazonaws.com/rce/viratax/viratax-repo-2024-09-14.tar.gz
-tar -zxvf viratax-repo-2024-09-14.tar.gz
 cd scripts
 ./RUNME.bash
 </pre>
