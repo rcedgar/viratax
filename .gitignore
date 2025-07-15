@@ -3,3 +3,4 @@ contigs/
 tarballs/
 tmp/
 docker/results.csv
+__pycache__/
